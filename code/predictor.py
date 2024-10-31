@@ -1,3 +1,22 @@
+# META DATA - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+# Developer details: 
+# Name: Akshat Rastogi and Shubh Gupta
+# Role: Developers
+# Code ownership rights: PreProd Corp
+
+# Description: This Streamlit app allows users to input features and make predictions using Neural Network.
+# MQs: No
+# Cloud: No
+# Data versioning: No
+# Data masking: No
+
+# CODE - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+# Dependency: 
+# Environment:     
+# Python 3.11.5
+# Streamlit 1.36.0
 import torch
 from torchvision.models.detection import fasterrcnn_resnet50_fpn, maskrcnn_resnet50_fpn
 from torchvision.models.detection.faster_rcnn import FastRCNNPredictor
