@@ -163,4 +163,4 @@ cython_debug/
 #.idea/
 
 check2.ipynb
-code/saved_models/fast_rcnn_damage_detection.pth
+code/saved_models/
