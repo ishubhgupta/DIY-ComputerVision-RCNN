@@ -38,35 +38,46 @@ with tab2:
         # Load data
         train_loader = get_data_loader(train_anno_path, train_images_path)
         num_classes = 2  # 1 class (damage) + background
-        
-        # User selects number of epochs
-        num_epochs = st.number_input("Enter number of epochs:", min_value=1, value=2)
 
         # Train Faster R-CNN
+        st.subheader("Train Faster R-CNN")
+        num_epochs_faster_rcnn = st.number_input("Enter number of epochs for Faster R-CNN:", min_value=1, value=10)
         if st.button("Train Faster R-CNN"):
             model = create_faster_rcnn_model(num_classes).to(device)
-            train_model(model, train_loader, num_epochs)
+            train_model(model, train_loader, num_epochs_faster_rcnn)
             save_model(model, 'code/saved_models/faster_rcnn_damage_detection.pth')
             st.success("Faster R-CNN model trained and saved successfully!")
         
+        st.markdown("---")  # Divider
+
         # Train Fast R-CNN
+        st.subheader("Train Fast R-CNN")
+        num_epochs_fast_rcnn = st.number_input("Enter number of epochs for Fast R-CNN:", min_value=1, value=10)
         if st.button("Train Fast R-CNN"):
             model = create_fast_rcnn_model(num_classes).to(device)
-            train_fast_rcnn_model(model, train_loader, num_epochs)
+            train_fast_rcnn_model(model, train_loader, num_epochs_fast_rcnn)
             save_model(model, 'code/saved_models/fast_rcnn_damage_detection.pth')
             st.success("Fast R-CNN model trained and saved successfully!")
         
+        st.markdown("---")  # Divider
+
         # Train R-CNN
+        st.subheader("Train R-CNN")
+        num_epochs_rcnn = st.number_input("Enter number of epochs for R-CNN:", min_value=1, value=10)
         if st.button("Train R-CNN"):
             model = RCNN(num_classes).to(device)
-            train_rcnn_model(model, train_loader, num_epochs)
+            train_rcnn_model(model, train_loader, num_epochs_rcnn)
             save_rcnn_model(model, 'code/saved_models/rcnn_damage_detection.pth')
             st.success("R-CNN model trained and saved successfully!")
-        
+
+        st.markdown("---")  # Divider
+
         # Train Mask R-CNN
+        st.subheader("Train Mask R-CNN")
+        num_epochs_mask_rcnn = st.number_input("Enter number of epochs for Mask R-CNN:", min_value=1, value=10)
         if st.button("Train Mask R-CNN"):
             model = create_mask_rcnn_model(num_classes).to(device)
-            train_mask_rcnn_model(model, train_loader, num_epochs)
+            train_mask_rcnn_model(model, train_loader, num_epochs_mask_rcnn)
             save_mask_rcnn_model(model, 'code/saved_models/mask_rcnn_damage_detection.pth')
             st.success("Mask R-CNN model trained and saved successfully!")
     
