@@ -29,7 +29,7 @@ from train_mask_rcnn import create_mask_rcnn_model, train_mask_rcnn_model, save_
 from predictor import predict_on_image, load_model  # Importing prediction functions
 
 # Streamlit title for the web application
-st.title("Damage Detection with R-CNN Models")
+st.title("Car Damage Detection")
 
 # Define image transformations to be applied to the input images
 transform = transforms.Compose([
