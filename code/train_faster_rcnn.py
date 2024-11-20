@@ -1,22 +1,25 @@
 # META DATA - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-# Developer details: 
-# Name: Rupal Mishra and Shubh Gupta
-# Role: Developers
-# Code ownership rights: PreProd Corp
-
-# Description: This Streamlit app allows users to input features and make predictions using Neural Network.
-# MQs: No
-# Cloud: No
-# Data versioning: No
-# Data masking: No
+    # Developer details: 
+        # Name: Rupal Mishra
+        # Role: Developers
+        # Code ownership rights: PreProd Corp
+    # Version:
+        # Version: V 1.1 (02 November 2024)
+            # Developers: Rupal Mishra
+            # Unit test: Pass
+            # Integration test: Pass
+     
+    # Description: This Streamlit app allows users to input image and make predictions using RCNN models.
 
 # CODE - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 # Dependency: 
-# Environment:     
-# Python 3.10.11
-# streamlit 1.40.0
+    # Environment:     
+        # Python 3.10.11
+        # Streamlit 1.40.0
+        # torch 2.5.0
+
 import torchvision.models as models  # Import torchvision models for use in the model creation
 import torch  # Import the PyTorch library
 import torch.nn as nn  # Import the neural network module from PyTorch
