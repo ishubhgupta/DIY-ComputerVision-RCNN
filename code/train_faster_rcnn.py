@@ -15,8 +15,8 @@
 
 # Dependency: 
 # Environment:     
-# Python 3.11.5
-# Streamlit 1.36.0
+# Python 3.10.11
+# streamlit 1.40.0
 import torchvision.models as models  # Import torchvision models for use in the model creation
 import torch  # Import the PyTorch library
 import torch.nn as nn  # Import the neural network module from PyTorch

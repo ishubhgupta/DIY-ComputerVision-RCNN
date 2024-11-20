@@ -15,8 +15,8 @@
 
 # Dependency: 
 # Environment:     
-# Python 3.11.5
-# Streamlit 1.36.0
+# Python 3.10.11
+# streamlit 1.40.0
 import torchvision.transforms as T  # Importing the torchvision transforms module for image preprocessing
 from torchvision.datasets import CocoDetection  # Importing the CocoDetection dataset class to load COCO dataset
 from torch.utils.data import DataLoader  # Importing DataLoader to handle batching and shuffling of data

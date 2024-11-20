@@ -15,8 +15,8 @@
 
 # Dependency: 
 # Environment:     
-# Python 3.11.5
-# Streamlit 1.36.0
+# Python 3.10.11
+# streamlit 1.40.0
 
 import streamlit as st  # Importing Streamlit for creating the web app interface
 import torchvision.transforms as transforms  # Importing transformations for image preprocessing
@@ -143,7 +143,7 @@ with tab3:
                     
                     # Display predictions
                     if best_prediction:  # Check if any predictions were made
-                        st.image(image_with_box, caption='Predicted Image with Bounding Box', use_column_width=True)  # Show the image with predictions
+                        st.image(image_with_box, caption='Predicted Image with Bounding Box', use_container_width=True)  # Show the image with predictions
                         st.write("Prediction:")  # Output section for prediction details
                         st.write(f"Label: {best_prediction['label']}, Score: {best_prediction['score']:.2f}, BBox: {best_prediction['bbox']}")  # Display label, score, and bounding box
                     else:

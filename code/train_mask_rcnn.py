@@ -15,8 +15,8 @@
 
 # Dependency: 
 # Environment:     
-# Python 3.11.5
-# Streamlit 1.36.0
+# Python 3.10.11
+# streamlit 1.40.0
 import torch
 from torchvision.models.detection import MaskRCNN
 from torchvision.models.detection.rpn import AnchorGenerator
