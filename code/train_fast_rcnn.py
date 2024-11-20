@@ -17,6 +17,7 @@
 # Environment:     
 # Python 3.10.11
 # streamlit 1.40.0
+
 # Import necessary libraries from PyTorch and torchvision
 import torchvision.models as models  # For pre-trained models
 import torch  # Core library for PyTorch

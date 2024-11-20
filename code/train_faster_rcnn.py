@@ -1,7 +1,7 @@
 # META DATA - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 # Developer details: 
-# Name: Akshat Rastogi and Shubh Gupta
+# Name: Rupal Mishra and Shubh Gupta
 # Role: Developers
 # Code ownership rights: PreProd Corp
 
