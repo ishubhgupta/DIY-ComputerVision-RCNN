@@ -10,14 +10,15 @@
             # Unit test: Pass
             # Integration test: Pass
      
-    # Description: This Streamlit app allows users to input image and make predictions using RCNN models.
+    # Description: This script provides evaluation functionalities for all RCNN models. It calculates and visualizes various metrics including loss, accuracy, and IoU scores for model performance assessment.
 
-# CODE - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-# Dependency: 
-    # Environment:     
-        # Python 3.10.11
-        # Streamlit 1.40.0
+    # Dependency: 
+        # Environment:     
+            # Python 3.10.11
+            # streamlit==1.40.0
+            # torch==2.5.0
+            # torchvision==0.20.0
+            # numpy==1.24.3
 
 import os  # Importing the os module for file system operations
 import streamlit as st  # Importing Streamlit for creating web applications

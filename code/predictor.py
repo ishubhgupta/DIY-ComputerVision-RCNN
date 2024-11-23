@@ -10,15 +10,16 @@
             # Unit test: Pass
             # Integration test: Pass
      
-    # Description: This Streamlit app allows users to input image and make predictions using RCNN models.
+    # Description: This script provides prediction functionalities for all RCNN models. It includes functions for loading models, processing images, and making predictions with bounding boxes.
 
-# CODE - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-# Dependency: 
-    # Environment:     
-        # Python 3.10.11
-        # Streamlit 1.40.0
-        # torch 2.5.0
+    # Dependency: 
+        # Environment:     
+            # Python 3.10.11
+            # torch==2.5.0
+            # torchvision==0.20.0 
+            # opencv-python==4.8.0.74
+            # numpy==1.24.3
+            # Pillow==10.0.0
 
 import torch
 from torchvision.models.detection import fasterrcnn_resnet50_fpn, maskrcnn_resnet50_fpn

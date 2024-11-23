@@ -10,14 +10,14 @@
             # Unit test: Pass
             # Integration test: Pass
      
-    # Description: This Streamlit app allows users to input image and make predictions using RCNN models.
+    # Description: This script handles data ingestion and transformation for RCNN models. It provides functionality for loading and preprocessing COCO format datasets, including batch processing and data augmentation.
 
-# CODE - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-# Dependency: 
-    # Environment:     
-        # Python 3.10.11
-        # Streamlit 1.40.0
+    # Dependency: 
+        # Environment:     
+            # Python 3.10.11
+            # torch==2.5.0
+            # torchvision==0.20.0
+            # pycocotools==2.0.8
 
 import torchvision.transforms as T  # Importing the torchvision transforms module for image preprocessing
 from torchvision.datasets import CocoDetection  # Importing the CocoDetection dataset class to load COCO dataset

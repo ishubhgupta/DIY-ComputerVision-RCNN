@@ -10,14 +10,20 @@
             # Unit test: Pass
             # Integration test: Pass
      
-    # Description: This Streamlit app allows users to input image and make predictions using RCNN models.
+    # Description: This is the main application script that provides a Streamlit web interface for training, evaluating and making predictions with various RCNN models for car damage detection.
 
-# CODE - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-# Dependency: 
-    # Environment:     
-        # Python 3.10.11
-        # Streamlit 1.40.0
+    # Dependency: 
+        # Environment:     
+            # Python 3.10.11
+            # streamlit==1.40.0
+            # torch==2.5.0
+            # torchvision==0.20.0
+            # Pillow==10.0.0
+            # numpy==1.24.3
+            # opencv-python==4.8.0.74
+            # pycocotools==2.0.8
+            # runpandas==1.5.3
+            # joblib==1.3.1
 
 import os
 import streamlit as st  # Importing Streamlit for creating the web app interface

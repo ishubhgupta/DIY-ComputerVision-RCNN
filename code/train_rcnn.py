@@ -10,14 +10,12 @@
             # Unit test: Pass
             # Integration test: Pass
      
-    # Description: This Streamlit app allows users to input image and make predictions using RCNN models.
+    # Description: This script implements the R-CNN model architecture and training pipeline. It includes custom backbone implementation and functions for model creation, training, saving, and loading.
 
 # CODE - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 # Dependency: 
     # Environment:     
-        # Python 3.10.11
-        # Streamlit 1.40.0
         # torch 2.5.0
 
 import torchvision.models as models  # Importing the models module from torchvision to access pre-trained models
