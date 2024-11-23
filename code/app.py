@@ -18,11 +18,9 @@
             # streamlit==1.40.0
             # torch==2.5.0
             # torchvision==0.20.0
-            # Pillow==10.0.0
             # numpy==1.24.3
             # opencv-python==4.8.0.74
             # pycocotools==2.0.8
-            # runpandas==1.5.3
             # joblib==1.3.1
 
 import os
