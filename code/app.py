@@ -19,9 +19,12 @@
         # Python 3.10.11
         # Streamlit 1.40.0
 
+import os
 import streamlit as st  # Importing Streamlit for creating the web app interface
+import torch
 import torchvision.transforms as transforms  # Importing transformations for image preprocessing
 from PIL import Image  # Importing Image for image manipulation
+from evaluate import evaluate as evc
 from ingest_transform import get_data_loader  # Importing the function to load the COCO dataset
 from train_faster_rcnn import create_model as create_faster_rcnn_model, train_model, save_model, device  # Importing functions for training Faster R-CNN
 from train_fast_rcnn import create_fast_rcnn_model, train_fast_rcnn_model, load_fast_rcnn_model  # Importing functions for training Fast R-CNN
@@ -40,7 +43,7 @@ transform = transforms.Compose([
 ])
 
 # Create tabs in the Streamlit app for organizing different functionalities
-tab1, tab2, tab3 = st.tabs(["Input Data Paths", "Train Models", "Make Prediction"])
+tab1, tab2, tab3, tab4 = st.tabs(["Input Data Paths", "Train Models", "Make Prediction", "Model Evaluation"])
 
 # Tab 1: Input Data Paths
 with tab1:
@@ -154,4 +157,23 @@ with tab3:
         else:
             # Error message if no image path is provided
             st.error("Please provide a valid path for the image.")
+
+# Tab 4: Evaluation
+with tab4:
+    st.header("Model Evaluation")  # Header for the evaluation tab
+    
+    # Model selection for evaluation
+    eval_model_type = st.selectbox("Select model for evaluation", 
+                                  ("Faster R-CNN", "Fast R-CNN", "R-CNN", "Mask R-CNN"),
+                                  key="eval_model")
+    
+    # Input fields for test data
+    test_anno_path = st.text_input("Enter path to test annotations:")
+    test_images_path = st.text_input("Enter path to test images:")
+    
+    if st.button("Evaluate Model"):
+        if test_anno_path and test_images_path and os.path.exists(test_anno_path) and os.path.exists(test_images_path):
+            evc(eval_model_type, test_anno_path, test_images_path)
+        else:
+            st.error("Please provide valid paths for test annotations and images.")
 
