@@ -49,7 +49,7 @@ transform = transforms.Compose([
 ])
 
 # Create tabs in the Streamlit app for organizing different functionalities
-tab1, tab2, tab3, tab4 = st.tabs(["Input Data Paths", "Train Models", "Make Prediction", "Model Evaluation"])
+tab1, tab2, tab3, tab4 = st.tabs(["Input Data Paths", "Train Models", "Model Evaluation", "Make Prediction"])
 
 # Tab 1: Input Data Paths
 with tab1:
@@ -118,9 +118,28 @@ with tab2:
         # Error message if paths are not provided
         st.error("Please provide valid paths for annotations and images in Tab 1.")
 
-
-# Tab 3: Make Prediction
+# Tab 3: Evaluation
 with tab3:
+    st.header("Model Evaluation")  # Header for the evaluation tab
+    
+    # Model selection for evaluation
+    eval_model_type = st.selectbox("Select model for evaluation", 
+                                  ("Faster R-CNN", "Fast R-CNN", "R-CNN", "Mask R-CNN"),
+                                  key="eval_model")
+    
+    # Input fields for test data
+    test_anno_path = st.text_input("Enter path to test annotations:")
+    test_images_path = st.text_input("Enter path to test images:")
+    
+    if st.button("Evaluate Model"):
+        if test_anno_path and test_images_path and os.path.exists(test_anno_path) and os.path.exists(test_images_path):
+            evc(eval_model_type, test_anno_path, test_images_path)
+        else:
+            st.error("Please provide valid paths for test annotations and images.")
+
+
+# Tab 4: Make Prediction
+with tab4:
     st.header("Make a Prediction")  # Header for the prediction tab
     
     # Model selection dropdown for choosing which model to use for prediction
@@ -164,22 +183,4 @@ with tab3:
             # Error message if no image path is provided
             st.error("Please provide a valid path for the image.")
 
-# Tab 4: Evaluation
-with tab4:
-    st.header("Model Evaluation")  # Header for the evaluation tab
-    
-    # Model selection for evaluation
-    eval_model_type = st.selectbox("Select model for evaluation", 
-                                  ("Faster R-CNN", "Fast R-CNN", "R-CNN", "Mask R-CNN"),
-                                  key="eval_model")
-    
-    # Input fields for test data
-    test_anno_path = st.text_input("Enter path to test annotations:")
-    test_images_path = st.text_input("Enter path to test images:")
-    
-    if st.button("Evaluate Model"):
-        if test_anno_path and test_images_path and os.path.exists(test_anno_path) and os.path.exists(test_images_path):
-            evc(eval_model_type, test_anno_path, test_images_path)
-        else:
-            st.error("Please provide valid paths for test annotations and images.")
 
